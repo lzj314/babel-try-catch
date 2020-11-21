@@ -1,0 +1,12 @@
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# 编辑器自动生成的文件
+.idea
+.vscode
+.DS_Store
+

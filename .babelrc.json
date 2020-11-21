@@ -1,0 +1,10 @@
+{
+  "presets": [
+
+  ],
+  "plugins": [
+    "./src/index.js",
+    "@babel/plugin-proposal-class-properties"
+  ]
+}
+
