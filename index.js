@@ -96,7 +96,7 @@ module.exports = function ({ types: t, template }) {
   return {
     visitor: {
       // 箭头函数替换
-      ArrowFunctionExpression(path) {
+      ArrowFunctionExpression(path, options = {opts:{}}) {
         var { parent, node } = path;
         if (!parent) return;
         if (
@@ -112,7 +112,7 @@ module.exports = function ({ types: t, template }) {
         replaceFuncBody(path, { astTemplate: wrapCaptureWithThrow });
       },
       // 函数声明替换
-      FunctionDeclaration(path) {
+      FunctionDeclaration(path, options = {opts:{}}) {
         var { parent, node } = path;
         if (!parent) return;
         if (
@@ -128,7 +128,7 @@ module.exports = function ({ types: t, template }) {
         replaceFuncBody(path, { astTemplate: wrapCaptureWithThrow });
       },
       // 类里的方法替换
-      ClassDeclaration(path) {
+      ClassDeclaration(path, options = {opts:{}}) {
         if (!path) return;
         if (!path.node) return;
         if (!path.node.body) return;
@@ -157,7 +157,7 @@ module.exports = function ({ types: t, template }) {
         });
       },
       // 变量声明替换
-      VariableDeclarator(path) {
+      VariableDeclarator(path, options = {opts:{}}) {
         if (!path) return;
         const { parent } = path;
 
@@ -170,7 +170,7 @@ module.exports = function ({ types: t, template }) {
         replaceFuncBody(init, { astTemplate: wrapCaptureWithThrow });
       },
 
-      Function(path) {
+      Function(path, options = {opts:{}}) {
           const parent = path.parent;
 
         if (!parent) return;
@@ -188,7 +188,7 @@ module.exports = function ({ types: t, template }) {
           return replaceFuncBody(path, { astTemplate: wrapCaptureWithThrow });
       },
 
-      CallExpression(path) {
+      CallExpression(path, options = {opts:{}}) {
         if (!path.node) return;
         if (!path.node.callee) return;
         const calleeProp = path.node.callee.property;
