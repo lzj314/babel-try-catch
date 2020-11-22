@@ -26,5 +26,9 @@
     "build": "./node_modules/.bin/babel test.js --out-dir lib"
   },
   "author": "lzj",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lzj3141/babel-try-catch.git"
+  }
 }
