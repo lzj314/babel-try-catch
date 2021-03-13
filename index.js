@@ -211,3 +211,4 @@ function checkAsyncProp(name) {
 function isWhiteList(funcName, whiteList) {
   // let list = ['_defineProperty', 'defineProperties', '_classCallCheck', '_possibleConstructorReturn', '_inherits', '_objectWithoutProperties', '_createClass'];
 }
+console.log('dd');
